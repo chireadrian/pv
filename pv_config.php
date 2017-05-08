@@ -43,18 +43,13 @@ $grad_add=$_POST['grad_add'];
   $query_add=mysqli_query($con,"insert into agenti (grad_s,lucratori,activ,creat) values('$grad_add','$lucrator_add','NU','$creat')");
   unset($_GET['add']);
   
-
-echo $creat."<br />";
-$time = strtotime($creat);
-$creat= date("d-m-Y H:i", $time);
-echo $creat."<br />";
                        }
 
 }
 
 
 	  	 if (isset($_GET['activ'])){
-	       echo $_GET['activ'];
+
            $id2=$_GET['id'];
 		   $activx=$_GET['activ'];
 
