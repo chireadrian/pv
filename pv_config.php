@@ -74,10 +74,10 @@ $grad_add=$_POST['grad_add'];
 if (isset($_GET['add'])) {
 switch ($_GET['add']){
 case "inregistrare":
-echo "<p><form method='post' action=''><select name='grad_add'><option value='Agent'>Agent</option><option value='Agent Principal'>Agent Principal</option>
+echo "<div class='add_reg'><form method='post' action=''><select name='grad_add'><option value='Agent'>Agent</option><option value='Agent Principal'>Agent Principal</option>
          <option value='Agent Sef Adjunct'>Agent Sef Adjunct</option><option value='Agent Sef'>Agent Sef</option>
 		 <option value='Agent Sef Principal'>Agent Sef Principal</option></select>
-		 <input type='text' name='lucrator_add' /><input type='submit' name='submit_add' value='Salveaza'></form></p>";
+		 <input  type='text' name='lucrator_add' /><input type='submit' name='submit_add' value='Salveaza'></form></div>";
 break;
 
 

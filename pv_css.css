@@ -17,8 +17,19 @@ body{width:964px;
 
 .pv_meniu li>a{background-color:#696565;padding:8px; }			 
 .pv_meniu li>a:hover{background-color:#292525;cursor:pointer; }
-input[name="submit"]:hover{cursor:pointer;text-decoration:underline;}
-input[name="submit"]{background-color:inherit;  font-family: "Times New Roman", Georgia, Serif;font-size:16px;color:#004de6;}
+input[name="submit"]:hover,input[name="submit_add"]:hover{cursor:pointer;text-decoration:underline;}
+input[name="submit"],input[name="submit_add"]{background-color:inherit;  font-family: "Times New Roman", Georgia, Serif;font-size:16px;color:#004de6;}
+
+input[name="lucrator_add"]{background-color:inherit;}
+.add_reg{width:450px;padding:10px;margin:auto; }
+.add_reg input[type="text"]{background-color:inherit;
+                           color:#000;
+                           border:1px dotted #000;
+                           font-family: "Times New Roman", Georgia, Serif; 
+                    	   font-size:16px;
+                           margin:4px;
+                           width:200px;
+                           padding:3px;} }
 .hov:hover{text-decoration:underline;} 
 select{background-color:inherit;font-family: "Times New Roman", Georgia, Serif;font-size:16px; }
  	 
