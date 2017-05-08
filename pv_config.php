@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC>
 <html>
 <!--  Created with the CoffeeCup HTML Editor 2008  -->
-<!--           http://www.coffeecup.com/           -->
+<!--        xxs   http://www.coffeecup.com/           -->
 <!--        Brewed on 3/25/2017 12:18:15 PM        -->
 <head>
   <title></title>
@@ -97,7 +97,9 @@ break;
 	  $id1=$_GET['id'];
 	  
    	     $lucrator=strtoupper(trim($_POST['lucrator']));
+		 if (!empty($lucrator)){
          $query2=mysqli_query($con,"update agenti set grad_s='$grad', lucratori='$lucrator' where id='$id1'");
+		                        }
          unset($_GET['id']);
    
  	                           }
