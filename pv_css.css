@@ -30,8 +30,8 @@ input[name="lucrator_add"]{background-color:inherit;}
                            margin:4px;
                            width:200px;
                            padding:3px;}
-.add_reg option{padding:3px; }                           
-                           
+.add_reg select{padding:3px;border:1px dotted #000; }
+                          
 .hov:hover{text-decoration:underline;} 
 select{background-color:inherit;font-family: "Times New Roman", Georgia, Serif;font-size:16px; }
  	 

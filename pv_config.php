@@ -28,8 +28,9 @@
 </div>
 <br /><br />
 <h3>CONFIGURARE</h3>
-<br /><br />
-<p><a href="pv_config.php?add=inregistrare">INREGISTRARE LUCRATORI</a></p>
+<br />
+<p style="margin:5px;"><a href="pv_config.php?add=inregistrare">INREGISTRARE LUCRATORI</a></p>
+
 <?php
  include('conexiune.php');
 
