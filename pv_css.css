@@ -17,7 +17,10 @@ body{width:964px;
 
 .pv_meniu li>a{background-color:#696565;padding:8px; }			 
 .pv_meniu li>a:hover{background-color:#292525;cursor:pointer; }
-input[name="submit"]:hover{background-color:red;cursor:pointer;} 
+input[name="submit"]:hover{cursor:pointer;text-decoration:underline;}
+input[name="submit"]{background-color:inherit;  font-family: "Times New Roman", Georgia, Serif;font-size:16px;color:#004de6;}
+.hov:hover{text-decoration:underline;} 
+select{background-color:inherit;font-family: "Times New Roman", Georgia, Serif;font-size:16px; }
  	 
 #sus{height:100px;}
 #mijloc{height:960px;
@@ -35,8 +38,9 @@ p.text1{font-size:18px; }
 
 .pv_st{font-size:18px;background-color:#E5E5E5;font-family: "Times New Roman", Georgia, Serif; }
 
-.edit {background-color:#696565;
-       color:#F2F2F2;
+.edit {background-color:inherit;
+       color:#000;
+       border:1px solid #000;
        font-family: "Times New Roman", Georgia, Serif; 
 	   font-size:16px;
        width:100%;
@@ -51,4 +55,4 @@ p.text1{font-size:18px; }
 .afisare tr td{padding:0 5px ;}
 
 .afisare a{text-decoration:none;color:#004de6;outline:none; }
-option:hover {color:red;}
+

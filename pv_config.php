@@ -126,7 +126,7 @@ if (isset($_GET['id'])and (!isset($_GET['activ']))){
 	 include ('grade.php');
 	 echo "</select> </td> <td><input type='text' class='edit' name='lucrator' value='".$query1['lucratori']."' /></td> <td>".$query1['activ']."</td> <td>".$query1['creat']."</td> <td>".$query1['dezactivat']."</td>";
 	 echo "<td>&nbsp; <input class='curs' type='submit' name='submit' value='Salveaza'> </td>";   	  
-	 echo "<td>&nbsp; <a href='pv_config.php?id=".$id."&activ=".$activ."'>".$actdez."</a> </td></form></tr>";	 
+	 echo "<td>&nbsp; <a class='hov' href='pv_config.php?id=".$id."&activ=".$activ."'>".$actdez."</a> </td></form></tr>";	 
 
 	 }
     else
@@ -136,10 +136,10 @@ if (isset($_GET['id'])and (!isset($_GET['activ']))){
 
 	 if ($query1['activ']=="NU"){
   	  echo" Editare </td>";}else{
-	  echo" <a href='pv_config.php?id=".$id."'>Editare</a> </td>";
+	  echo" <a class='hov' href='pv_config.php?id=".$id."'>Editare</a> </td>";
 	    }	 
 	     	  
-	 echo "<td>&nbsp; <a href='pv_config.php?id=".$id."&activ=".$activ."'>".$actdez."</a> </td></tr>";
+	 echo "<td>&nbsp; <a class='hov' href='pv_config.php?id=".$id."&activ=".$activ."'>".$actdez."</a> </td></tr>";
          
    }
                       }else
@@ -160,10 +160,10 @@ if (isset($_GET['id'])and (!isset($_GET['activ']))){
 	 echo "<td>&nbsp;";
 	 if ($query1['activ']=="NU"){
 	 echo" Editare </td>";}else{
-	 echo" <a href='pv_config.php?id=".$id."'>Editare</a> </td>";
+	 echo" <a class='hov' href='pv_config.php?id=".$id."'>Editare</a> </td>";
 	 }
 	    	  
-	 echo "<td>&nbsp; <a href='pv_config.php?id=".$id."&activ=".$activ."'>".$actdez."</a> </td></tr>";
+	 echo "<td>&nbsp; <a class='hov' href='pv_config.php?id=".$id."&activ=".$activ."'>".$actdez."</a> </td></tr>";
 
     }
        } 
