@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC>
 <html>
 <!--  Created with the CoffeeCup HTML Editor 2008  -->
-<!--        xxs   http://www.coffeecup.com/           -->
+<!--      xll   http://www.coffeecup.com/           -->
 <!--        Brewed on 3/25/2017 12:18:15 PM        -->
 <head>
   <title></title>
@@ -69,8 +69,6 @@ $grad_add=$_POST['grad_add'];
 		   
 		    
 	 	   }
-
-
 
 if (isset($_GET['add'])) {
 switch ($_GET['add']){
