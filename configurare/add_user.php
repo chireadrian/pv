@@ -61,7 +61,8 @@ if (isset($_POST['submit'])){
           if ($activ=="NU"){ $actdez="Activare"; } else{ $actdez="Dezactivare";}
           if (isset($_GET['id'])and (!isset($_GET['activ']))){
                if ($query1['id']==$_GET['id']) { 
- 			         echo "<tr> <td><form method='post' action=''> <select name='grad'><option>".ucwords(strtolower($query1['grad_s']))."</option>";
+ 			         echo "<tr> <td><form method='post' action=''> <select name='grad'>
+					 <option>".ucwords(strtolower($query1['grad_s']))."</option>";
 					 include ('grade.php');
                 	 echo "</select> </td> <td><input type='text' class='edit' name='lucrator' value='".$query1['lucratori']."' /></td> <td>".$query1['activ']."</td> <td>".$query1['creat']."</td> <td>".$query1['dezactivat']."</td>";
                	     echo "<td>&nbsp; <input class='curs' type='submit' name='submit' value='Salveaza'> </td>";   	  
