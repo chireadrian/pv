@@ -2,7 +2,6 @@
 switch ($query1['grad_s']){
 case "Agent":
       include('grade/agent.html');
-
 break;
 case "Agent Principal":
       include('grade/agent_pr.html');
