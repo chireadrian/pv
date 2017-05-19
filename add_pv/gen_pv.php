@@ -1,26 +1,35 @@
 <?php
+
+$query="select * from pvuri where pv_nou='DA'";
+$caut=mysqli_query($con,$query);
+
+$rezultat=mysqli_fetch_array($caut,MYSQLI_ASSOC);
+if ($rezultat['pv_nou']=="DA"){
+echo $rezultat['pv_nou'];
+echo $rezultat['ora_p'];
+}else{echo "Nu exista activ pv";}
+
+
+
+
+
+  /*
 $query="select * from agenti where activ='DA'";
 $query1=mysqli_query($con,$query);
 
 
-echo "<form method='get' action=''>";
-
 while($rez=mysqli_fetch_array($query1,MYSQLI_ASSOC)){
 
-
-
-echo "<input type='checkbox' name='a' value='".$rez['id']."' />";
-echo "<input type='checkbox' name='b' value='".$rez['id']."' />";
+echo "<input type='checkbox' />" ;
 echo $rez['lucratori'];
  
  
 echo "<br />";
-$cont=$rez['id'];
+
 }
 
-echo "<input type='submit' /></form>cont=",$cont."<br />";
 
-if (isset($_GET['a'])or(isset($_GET['b']))){
+
 
 $url= str_replace("?","&",$_SERVER['REQUEST_URI']);
 
@@ -58,3 +67,4 @@ if ($z=="b="){
 
 
 }
+*/
