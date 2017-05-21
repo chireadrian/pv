@@ -5,8 +5,67 @@ $caut=mysqli_query($con,$query);
 
 $rezultat=mysqli_fetch_array($caut,MYSQLI_ASSOC);
 if ($rezultat['pv_nou']=="DA"){
-echo $rezultat['pv_nou'];
-echo $rezultat['ora_p'];
+
+  $g1="";  $g2="";  $g3="";  $g4=""; $l1="";  $l2="";$l3="";$l4="";
+  $query1="select grad_s,lucratori from pvuri,agenti where(l1=id or l2=id) and (pv_nou='DA' and activ='DA')";
+  $caut1=mysqli_query($con,$query1); 
+  $cont=0;
+
+  while ($rezultat1=mysqli_fetch_array($caut1,MYSQLI_ASSOC)){
+   echo $rezultat1['grad_s']." - ";
+   echo $rezultat1['lucratori']." <br /> ";
+   $cont++;
+   echo "<h3>".$cont."</h3>";
+   if ($cont==1) {
+   $g1=$rezultat1['grad_s'];
+   $l1=$rezultat1['lucratori'];
+               }
+   if ($cont==2){
+   $g2=$rezultat1['grad_s'];
+   $l2=$rezultat1['lucratori'];
+               } 
+ 
+  }
+
+  $query1="select grad_s,lucratori from pvuri,agenti where(l3=id or l4=id) and (pv_nou='DA' and activ='DA')";
+  $caut1=mysqli_query($con,$query1); 
+  $cont=0;
+
+  while ($rezultat1=mysqli_fetch_array($caut1,MYSQLI_ASSOC)){
+   echo $rezultat1['grad_s']." - ";
+   echo $rezultat1['lucratori']." <br /> ";
+   $cont++;
+   echo "<h3>".$cont."</h3>";
+   if ($cont==1) {
+   $g3=$rezultat1['grad_s'];
+   $l3=$rezultat1['lucratori'];
+               }
+   if ($cont==2){
+   $g4=$rezultat1['grad_s'];
+   $l4=$rezultat1['lucratori'];
+               } 
+
+
+}  
+
+
+  
+  $query3="select tip_tura,pv_data from pvuri where pv_nou='DA'";
+  $caut3=mysqli_query($con,$query3); 
+
+  while ($rezultat3=mysqli_fetch_array($caut3,MYSQLI_ASSOC)){
+   echo $rezultat3['tip_tura']." - ";  
+   echo $rezultat3['pv_data']." <br /> ";
+ }
+
+
+
+ echo "<h3>PROCES - VERBAL</h3>";
+ echo "Incheiat azitazi ".$rezultat3['pv_data'] ." intre ".$g1.". ".$l1. ", ".$g2.".".$l2;
+ echo " si ".$g3.".".$l3.",".$g4.",".$l4;
+
+echo "procedand primul la predarea si secundul la primirea tehnicii si materialelor de comunicatii din cadrul Compartimentului de Comunicatii si Informatica.";
+echo "Cu ocazia predarii-primirii au afost aduse la cunostinta si activitatile desfasurate dupa cum urmeaza:";   
 }else{echo "Nu exista activ pv";}
 
 
