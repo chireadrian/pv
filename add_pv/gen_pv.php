@@ -54,18 +54,18 @@ if ($rezultat['pv_nou']=="DA"){
   $caut3=mysqli_query($con,$query3); 
 
   while ($rezultat3=mysqli_fetch_array($caut3,MYSQLI_ASSOC)){
-   echo $rezultat3['tip_tura']." - ";  
+
+   echo $rezultat3['tip_tura']." - ";
    echo $rezultat3['pv_data']." <br /> ";
- }
-
-
+   $datestamp=strtotime($rezultat3['pv_data']);
+   $data=date("d.m.Y",$datestamp);                                                    }
 
  echo "<h3>PROCES - VERBAL</h3>";
- echo "Incheiat azitazi ".$rezultat3['pv_data'] ." intre ".$g1.". ".$l1. ", ".$g2.".".$l2;
- echo " si ".$g3.".".$l3.",".$g4.",".$l4;
+ echo "Incheiat azi&nbsp;".$data."&nbsp;intre noi,&nbsp;".$g1."&nbsp;<strong>".$l1."</strong>&nbsp;".$g2."&nbsp;<strong>".$l2;
+ echo "</strong>&nbsp;si&nbsp;".$g3."&nbsp;<strong>".$l3."</strong>&nbsp;".$g4."&nbsp;<strong>".$l4."</strong>";
 
-echo "procedand primul la predarea si secundul la primirea tehnicii si materialelor de comunicatii din cadrul Compartimentului de Comunicatii si Informatica.";
-echo "Cu ocazia predarii-primirii au afost aduse la cunostinta si activitatile desfasurate dupa cum urmeaza:";   
+echo "&nbsp;procedand primul/primii la predarea si secundul/secunzii la primirea tehnicii si materialelor de comunicatii din cadrul Compartimentului Comunicatii si Informatica.";
+echo "<br />Cu ocazia predarii-primirii au afost aduse la cunostinta si activitatile desfasurate dupa cum urmeaza:<br />";   
 }else{echo "Nu exista activ pv";}
 
 
@@ -86,8 +86,6 @@ echo $rez['lucratori'];
 echo "<br />";
 
 }
-
-
 
 
 $url= str_replace("?","&",$_SERVER['REQUEST_URI']);
