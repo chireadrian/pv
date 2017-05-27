@@ -1,0 +1,31 @@
+
+<h3>PROCES VERBAL</h3>
+<p>Incheiat azi intre noi <?php $l=$rez['l1'];include("add_pv/afis_luc.php"); ?> &nbsp; <?php $l=$rez['l2'];include("add_pv/afis_luc.php"); ?> si 
+                          <?php $l=$rez['l3'];include("add_pv/afis_luc.php"); ?> &nbsp; <?php $l=$rez['l4'];include("add_pv/afis_luc.php"); ?> 
+procedand primul/primii la predare si secundul/secunzii la primirea tehnicii si materialelor de comunicatii din cadrul Compartimentului Comunicatii si Informatica.</p>
+<p>Cu ocazia predarii-primirii au afost aduse la cunostinta si activitatile desfasurate dupa cum urmeaza:</p>
+
+<br /><br />
+<?php include("add_pv/afis_pv.php"); ?>
+
+
+
+<p>Camere functionale: <strong> <?php echo $camere; ?></strong></p> 
+<p>Transmis ENO: <strong><?php echo $eno; ?></strong></p> 
+
+<p>Curse Intrare: <strong><?php echo $sum_curse_i; ?></strong></p> 
+<p>Curse Iesire: <strong><?php echo $sum_curse_e; ?></strong></p> 
+
+<p><strong>CRIPTAB - RECEPTIONATE</strong></p>
+<p>CLASIFICATE: <strong><?php echo $sum_crcr; ?> </strong></p>
+<p>NECLASIFICATE: <strong><?php echo $sum_crnr; ?> </strong></p>
+
+<p><strong>CRIPTAB - TRANSMISE</strong></p>
+<p>CLASIFICATE: <strong><?php echo $sum_crnt; ?> </strong></p>
+<p>NECLASIFICATE: <strong><?php echo $sum_crct; ?> </strong></p>
+
+<p><strong>CONTURI DDOMENIU</strong></p>
+<p>RESETATE: <strong><?php echo $sum_cdr; ?> </strong></p>
+<p>CREATE: <strong><?php echo $sum_cdc; ?> </strong></p>
+<p>DEBLOCATE: <strong><?php echo $sum_cdd; ?> </strong></p>
+<p>DEZACTIVATE: <strong><?php echo $sum_cddz; ?> </strong></p>
