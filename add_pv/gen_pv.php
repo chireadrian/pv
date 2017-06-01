@@ -8,15 +8,54 @@ include ("html\gen_pv.html");
 
 
 
+$query4=mysqli_query($con,"select c_reg,c_scan from pvdate where ev_pv='$id'");
+$a1=null;
+$a2=null;
+$a3=null;
+$a4=null;
+while ($rez4=mysqli_fetch_assoc($query4)){
 
+if (!is_null($rez4['c_reg'])){
 
+    switch ($rez4['c_reg']){
+      case 1:
+	    $a1=$a1+1;
+	  break;
+      case 2:
+	    $a2=$a2+1;
+	  break;
+      case 3:
+	    $a3=$a3+1;
+	  break;
+      case 4:
+	    $a4=$a4+1;
+	  break;
+	  	
+                           }
 
+                              }
+if (!is_null($rez4['c_scan'])){
+   echo $rez4['c_scan']."<br />";
+                              }							  
+							  
+							  
+							  
+};
 
+ 	    echo "-Regula - Checkdisk: ".$a1."<br />";
+ 	    echo "-Regula - Calibrare: ".$a2."<br />";
+ 	    echo "-Regula - Reinstalare: ".$a3."<br />";		
+ 	    echo "-Regula - Altele: ".$a4."<br />";
 
+echo "Altele:".$altele."<br />";
 
+if ($altele=="DA"){
+   $query5=mysqli_query($con,"select * from pv_altele where id_altele='$id'");
+   while ($rez5=mysqli_fetch_assoc($query5)){ 
+   echo $rez5['defectiuni']."<br />";
+                                            }
 
-
-
+}
 
 
 /*
