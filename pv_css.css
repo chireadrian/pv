@@ -17,8 +17,12 @@ body{width:964px;
 
 .pv_meniu li>a{background-color:#696565;padding:8px; }			 
 .pv_meniu li>a:hover{background-color:#292525;cursor:pointer; }
-input[name="submit"]:hover,input[name="submit_add"]:hover{cursor:pointer;text-decoration:underline;}
-input[name="submit"],input[name="submit_add"]{background-color:inherit;  font-family: "Times New Roman", Georgia, Serif;font-size:16px;color:#004de6;}
+input[name="submit"]:hover,input[name="submit_add"]:hover{cursor:pointer;
+                                                          text-decoration:underline;}
+input[name="submit"],input[name="submit_add"]{background-color:inherit;  
+                                              font-family: "Times New Roman", Georgia, Serif;
+                                              font-size:16px;
+                                              color:#004de6;}
 
 input[name="lucrator_add"]{background-color:inherit;}
 .add_reg{width:450px;padding:10px;margin:auto; }
@@ -67,5 +71,12 @@ p.text1{font-size:18px; }
          line-height:28px;}
 .afisare tr td{padding:0 5px ;}
 
-.afisare a{text-decoration:none;color:#004de6;outline:none; }
-
+.afisare a{text-decoration:none;color:#004de6;outline:none;}
+.div_genpv1,.div_genpv2,.div_genpv3{width:440px;
+     height:auto;
+     border:1px solid black;
+     text-align:left;
+     margin:inherit;
+     padding:15px;
+ 	}
+input[name="check_list[]"]{ margin:5px;    padding:51px; }
