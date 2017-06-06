@@ -74,13 +74,15 @@ $time = strtotime($rez_t[0]);
 $creat1= date("d.m.Y", $time);
 echo $creat1;
 
-
+if (!isset($_GET['creat'])){
+    $_GET['creat']=$creat1;
+                          } 
 
 echo "<div class='div_genpv2'>";
   echo "Introduceti data si ora iesirii din serviciu!<br /><br />";
-    echo "<form><input type='date' style='width:80px;' value='".$creat1."' />";
-    echo " <input type='radio' name='tura' value='NU' /><span>07:00</span>";
-    echo "<input type='radio' name='tura' value='DA' /><span>20:00</span> </form>";
+    echo "<form action='' method='GET'><input type='date' style='width:80px;' name= 'data_g' value='".$_GET['creat']."' />";
+    echo " <input type='radio' name='tura' value='Z' /><span>07:00</span>";
+    echo "<input type='radio' name='tura' value='N' /><span>20:00</span>";
  
 echo "</div>";
 
@@ -91,25 +93,79 @@ echo "<div class='div_genpv1'>";
 $query7="select * from agenti where activ='DA'";
 $caut7=mysqli_query($con,$query7);
 
-echo "<form action='' method='GET'>";
+
 while($rez7=mysqli_fetch_array($caut7,MYSQLI_ASSOC)){
 
-echo "<label class='lab'><input type='checkbox' name='check_list[]' value='".$rez7['lucratori']."' /><span>".$rez7['lucratori']."</span></label><br />";
+echo "<label class='lab'><input type='checkbox' name='check_list[]' value='".$rez7['id']."' /><span>-".$rez7['id']."-".$rez7['lucratori']."</span></label><br />";
 
 }
+if   (isset($_GET['check_list']) and (count($_GET['check_list'])>2)){
+        echo "Atentie! Selectati maximum 2 lucratori<br />";
+                               }
+if   (!isset($_GET['check_list'])and (isset($_GET['tura'])) ){
+        echo "Atentie! Nu ati selectat lucratorii!<br />";
+                               }
+if   (isset($_GET['check_list'])and (!isset($_GET['tura'])) ){
+        echo "Atentie! Nu ati selectat ora predarii serviciului!<br />";
+		
+                               }
 
-foreach($_GET['check_list'] as $check) {
-echo "-".$check."<br />";
+if   (!isset($_GET['check_list'])and (!isset($_GET['tura'])) ){
+        echo "Actualizatati data, selectati ora si lucratorii!<br />";
+                               }
+  if (isset($_GET['data_g'])) {
+   $zz=explode(".",$_GET['data_g']);
+  if (!checkdate($zz[1],$zz[0],$zz[2])){echo "Atentie! Data introdusa nu este valida!!!<br />";}
+	}						   
+   
+							   
+if ((isset($_GET['check_list']))and(isset($_GET['tura']))and(  count($_GET['check_list'])<3   ) ){
+  foreach($_GET['check_list'] as $check) {
+   echo "--->".$check."<br />";
 
-}
+                                          }  
+
+										 
 echo count($_GET['check_list'])."<br />";
-echo $_GET['check_list'][1];
 
+echo "DATA ALEASA:".$zz[0].$zz[1].$zz[2]."<br />";
+
+  $tura=$_GET['tura'];
+  if (trim($tura)=="Z"){$timp=" 07:00:00";}else{$timp=" 20:00:00";}
+
+$dataf=$zz[2]."-".$zz[1]."-".$zz[0].$timp;
+
+
+
+echo $dataf;
+echo "TURA:".$_GET['tura']."<br />";
+
+
+  
+if (isset($_GET['check_list'][1])){ 
+  $l1=$_GET['check_list'][0];
+  $l2=$_GET['check_list'][1];
+  $query8="insert into pvuri (pv_nou,l1,l2,tip_tura,pv_data) values ('NU','".$l1."','.$l2.','".$tura."','".$dataf."')";
+  $caut=mysqli_query($con,$query8);
+                              }else{
+							  
+							    $l1=$_GET['check_list'][0];
+ 							    $query8="insert into pvuri (pv_nou,l1,tip_tura,pv_data) values ('NU','".$l1."','".$tura."','".$dataf."')";
+ 							    $caut=mysqli_query($con,$query8);
+							  
+							  
+							       }
+
+
+
+}
 echo "<BR /><br /></div>";
 
 echo "<div class='div_genpv3'>";
 echo "<input type='submit' value='Genereaza PV!'> ";
 echo "</form>";
+
+
 
 echo "</div>";
 
