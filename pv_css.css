@@ -72,11 +72,30 @@ p.text1{font-size:18px; }
 .afisare tr td{padding:0 5px ;}
 
 .afisare a{text-decoration:none;color:#004de6;outline:none;}
-.div_genpv1,.div_genpv2,.div_genpv3{width:440px;
+.div_genpv2,.div_genpv1,.div_genpv3{width:440px;
      height:auto;
      border:1px solid black;
      text-align:left;
      margin:inherit;
      padding:15px;
  	}
-input[name="check_list[]"]{ margin:5px;    padding:51px; }
+.div_genpv2{text-align:center;}
+.div_genpv2 input{background-color:#E5E5E5; border:1px dotted #000;padding:3px;}
+.div_genpv2 input[type="date"]:hover{border:1px solid black;cursor:pointer; }
+
+
+.div_genpv3{text-align:center;}
+.div_genpv1 p{text-align:center;font-family: "Times New Roman", Georgia, Serif; 
+	   font-size:16px;}
+p.red{color:red; }
+    
+input[name="check_list[]"]{ margin:5px 5px 5px 25px; padding:51px; }
+
+.div_genpv2 input[type="date"]{ width:95px;text-align:center;font-family: "Times New Roman", Georgia, Serif; 
+	   font-size:16px;}
+       
+input[name="trim_f"]{padding:4px;background-color:#E5E5E5;border:1px solid #E5E5E5;;font-family: "Times New Roman", Georgia, Serif;font-size:16px; }
+input[name="trim_f"]:hover{cursor:pointer; border:1px dotted #000;}
+.div_genpv2 label:hover, .div_genpv2 input[name="tura"]:hover{cursor:pointer; }
+.lab:hover,input[name="check_list[]"]:hover{cursor:pointer;}
+
