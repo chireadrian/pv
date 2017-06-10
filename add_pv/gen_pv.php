@@ -37,9 +37,6 @@ if (!is_null($rez4['c_reg'])){
 
                               }
 					  
-							  
-							  
-							  
 };
 
  	    echo "-Regula - Checkdisk: ".$a1."<br />";

@@ -40,7 +40,7 @@ input[name="lucrator_add"]{background-color:inherit;}
 select{background-color:inherit;font-family: "Times New Roman", Georgia, Serif;font-size:16px; }
  	 
 #sus{height:100px;}
-#mijloc{height:960px;
+#mijloc{height:auto;
         margin:2px auto 2px auto;}
 #jos{height:50px;}
 
