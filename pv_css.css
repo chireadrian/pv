@@ -99,3 +99,7 @@ input[name="trim_f"]:hover{cursor:pointer; border:1px dotted #000;}
 .div_genpv2 label:hover, .div_genpv2 input[name="tura"]:hover{cursor:pointer; }
 .lab:hover,input[name="check_list[]"]:hover{cursor:pointer;}
 
+#table{display:table;text-align:center;margin:auto;}
+.t-cell{display:table-row;}
+.cell{display:table-cell;border:1px solid red; vertical-align:middle;}
+.up{border:1px solid red;text-align:left; }

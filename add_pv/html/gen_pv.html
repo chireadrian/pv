@@ -10,48 +10,134 @@ procedand primul/primii la predare si secundul/secunzii la primirea tehnicii si 
 
  ?>
 
-<div style="width:575px; height:auto;border:1px solid red;text-align:center;margin:auto;">
-  <div style="float:left;width:250px;border:1px solid green;">
-    <p style="">Activitatea</p>
-  </div>
-  <div style="float:left;width:200px;border:1px solid green;">
-    <p>Specific</p>
-  </div>
-  <div style="float:left;width:80px;border:1px solid green;">
-    <p>Nr.</p>
-  </div>
-  <div style="clear:both;">
-  </div>
-</div>
- 
- 
- 
-<div style="width:575px; height:auto;border:1px solid red;text-align:center;margin:auto;display:block;vertical-align:middle;">
-  <div style="float:left;width:250px;border:1px solid green;display: table-cell;">
-    <p style="">Camere video filtru</p>
-  </div>
-  
-  
- <div style="float:left;width:200px;border:1px dotted green;display: table-cell;">  
-  <div style="border:1px solid green;">
-    <p>Functionale</p>
-  </div>
- 
-  <div style="border:1px solid green;">
-    <p>Nefunctionale</p>
-  </div>
-  
- <div style="border:1px solid green;">
-    <p>Testare</p>
-  </div>  
+ <div id="table">
+    <div class="t-cell">
+       <div class="cell" style="width:300px;">Activitatea</div> 
+       <div class="cell" style="width:200px;">Specific</div>   
+       <div class="cell" style="width:80px;">Nr.</div> 
+    </div>
+	
+    <div class="t-cell">
+       <div class="cell"><p>Camere video filtru</p></div> 
+       <div class="cell">
+	       <div class="up">Functionale</div>
+	   </div>   
+       <div class="cell">
+	       <div class="up"><?php echo $camere; ?></div>		   	   
+	   </div> 
+    </div>
+	
+    <div class="t-cell">
+       <div class="cell"><p>Filmari arhiva</p></div> 
+       <div class="cell">
+	       <div class="up">Solicitate</div>
+	   </div>   
+       <div class="cell">
+	       <div class="up"><?php echo $eno; ?></div>
+		   	   
+	   </div> 
+    </div>
+
+    <div class="t-cell">
+       <div class="cell">
+	     <p>CriptAB</p>
+	   </div> 
+       <div class="cell">
+	       <div class="up"><strong>Receptionate:</strong></div>
+	       <div class="up"> - Clasificate</div>
+	       <div class="up"> - Necalsificate</div>
+	       <div class="up"><strong>Transmise:</strong></div>		   
+	       <div class="up"> - Clasificate</div>
+	       <div class="up"> - Neclasificate</div>		   		   		   
+	   </div>   
+       <div class="cell">
+	       <div class="up">&nbsp;</div>	   
+	       <div class="up"><?php echo $sum_crcr; ?></div>
+	       <div class="up"><?php echo $sum_crnr; ?></div>		   	   
+   	       <div class="up">&nbsp;</div>
+   	       <div class="up"><?php echo $sum_crnt; ?></div>
+	       <div class="up"><?php echo $sum_crct; ?></div>		   	   
+		   
+	   </div> 
+    </div>	
+
+    <div class="t-cell">
+       <div class="cell"><p>Conturi DOMENIU</p></div> 
+       <div class="cell">
+	       <div class="up">Resetate</div>
+	       <div class="up">Deblocate</div>
+	       <div class="up">Create</div>
+	       <div class="up">Dezactivate</div>		   		   		   
+	   </div>   
+       <div class="cell">
+	       <div class="up"><?php echo $sum_cdr; ?></div>
+	       <div class="up"><?php echo $sum_cdd; ?></div>
+	       <div class="up"><?php echo $sum_cdc; ?></div>
+	       <div class="up"><?php echo $sum_cddz; ?></div>		   	   		   		   	   
+	   </div> 
+    </div>
+
+
+    <div class="t-cell">
+       <div class="cell"><p>Conturi INTRANET</p></div> 
+       <div class="cell">
+	       <div class="up">Resetate</div>
+	       <div class="up">Acordate</div>
+	       <div class="up">Create</div>
+	       <div class="up">Dezactivate</div>		   		   		   
+	   </div>   
+       <div class="cell">
+	       <div class="up"><?php echo $sum_cir; ?></div>
+	       <div class="up"><?php echo $sum_cia; ?></div>
+	       <div class="up"><?php echo $sum_cic; ?></div>
+	       <div class="up">xx</div>		   	   		   		   	   
+	   </div> 
+    </div>
+	
+    <div class="t-cell">
+       <div class="cell"><p>Lot ENO</p></div> 
+       <div class="cell">
+	       <div class="up">Transmis</div>
+		   
+	   </div>   
+       <div class="cell">
+	       <div class="up"><?php echo $eno; ?></div>
+       </div> 
+    </div>	
+    <div class="t-cell">
+    </div>
+
+    <div class="t-cell">
+       <div class="cell"><p>Implementare curse</p></div> 
+       <div class="cell">
+	       <div class="up">Plecari</div>
+	       <div class="up">Sosiri</div>		   
+	   </div>   
+       <div class="cell">
+	       <div class="up"><?php echo $sum_curse_e; ?></div>
+	       <div class="up"><?php echo $sum_curse_i; ?></div>		   	   
+	   </div> 
+    </div>
+
+		
  </div>
-  
-  <div style="float:left;width:80px;border:1px solid green;">
-    <p>Nr.</p>
-  </div>
-  <div style="clear:both;">
-  </div>
-</div>
+<?php if ($altele=="DA"){
+   $query5=mysqli_query($con,"select * from pv_altele where id_altele='$id'");
+   while ($rez5=mysqli_fetch_assoc($query5)){ 
+
+   if (!is_null($rez5['c_scan'])){
+      echo "-->".$rez5['c_scan']."<br />";
+                              }		 
+   if (!is_null($rez5['defectiuni'])){
+      echo $rez5['defectiuni']."<br />";
+                              }		
+ 
+                                             }
+											 }
+?>
+ 
+ <p>---------------------------</p>
+ 
  
 
  
